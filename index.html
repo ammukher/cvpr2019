@@ -38,7 +38,7 @@
       
       // Visualize frame
       cv.imshow(output, frame);
-      /*for (var i = 0, n = out.data32F.length; i < n; i += 7) {
+      for (var i = 0, n = out.data32F.length; i < n; i += 7) {
         var confidence = out.data32F[i + 2];
         if (confidence < 0.5)
           continue;
@@ -47,7 +47,7 @@
         var right = out.data32F[i + 5] * frame.cols;
         var bottom = out.data32F[i + 6] * frame.rows;
         cv.rectangle(frame, {x: left, y: top}, {x: right, y: bottom}, [0, 255, 0, 255]);
-      }*/
+      }
       blob.delete();
       out.delete();
     //}
