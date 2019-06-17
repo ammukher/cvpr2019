@@ -37,8 +37,8 @@
       var out = net.forward();
       
       // Visualize frame
-      cv.imshow(output, frame);
-      cv.rectangle(frame, {x: 100.0, y: 200.0}, {x: 100.0, y: 100.0}, [0, 255, 0, 255]);
+      
+      //cv.rectangle(frame, {x: 100.0, y: 200.0}, {x: 100.0, y: 100.0}, [0, 255, 0, 255]);
       
       for (var i = 0, n = out.data32F.length; i < n; i += 7) {
         var confidence = out.data32F[i + 2];
@@ -50,6 +50,9 @@
         var bottom = out.data32F[i + 6] * frame.rows;
         cv.rectangle(frame, {x: left, y: top}, {x: right, y: bottom}, [0, 255, 0, 255]);
       }
+      
+      cv.imshow(output, frame);
+      
       blob.delete();
       out.delete();
     
@@ -71,7 +74,7 @@
 </head>
 
 <body>
-  This is new 6 ..
+  This is new 7 ..
   <canvas id="output" width=640 height=480 style="max-width: 100%"></canvas>
 </body>
 
